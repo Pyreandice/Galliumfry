@@ -1,0 +1,10 @@
+﻿  Services.cpp
+c:\users\grayson\source\repos\graysonbeam_homework_1_semester_2\graysonbeam_homework_1_semester_2\services.cpp(56): error C2661: 'std::vector<Service,std::allocator<_Ty>>::push_back': no overloaded function takes 4 arguments
+          with
+          [
+              _Ty=Service
+          ]
+c:\users\grayson\source\repos\graysonbeam_homework_1_semester_2\graysonbeam_homework_1_semester_2\services.cpp(64): error C2668: 'Service::Service': ambiguous call to overloaded function
+  c:\users\grayson\source\repos\graysonbeam_homework_1_semester_2\graysonbeam_homework_1_semester_2\service.h(32): note: could be 'Service::Service(std::string,std::string,double,std::string)'
+  c:\users\grayson\source\repos\graysonbeam_homework_1_semester_2\graysonbeam_homework_1_semester_2\service.h(9): note: or       'Service::Service(void)'
+  c:\users\grayson\source\repos\graysonbeam_homework_1_semester_2\graysonbeam_homework_1_semester_2\services.cpp(64): note: while trying to match the argument list '()'
