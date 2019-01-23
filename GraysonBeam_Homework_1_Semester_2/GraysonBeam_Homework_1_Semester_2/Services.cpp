@@ -2,6 +2,7 @@
 
 Services::Services()
 {
+	std::list<Service> objList;
 }
 
 void Services::ReadThroughFile(std::string fileName)
@@ -12,8 +13,8 @@ void Services::ReadThroughFile(std::string fileName)
 	std::string buff2;
 	std::ifstream fin;
 	fin.open(fileName);
-	std::string NameTemp = "";
-	std::string TypeTemp = "";
+	std::string NameTemp;
+	std::string TypeTemp;
 	double PriceTemp = 0.0;
 	std::string DateTemp;
 	const char delem = ',';
@@ -47,13 +48,13 @@ void Services::ReadThroughFile(std::string fileName)
 				}
 				default:
 				{
-					// No need to do anything
+					// else, do_nothing();
 					break;
 				}
 				counter++;
 			}
 			counter = 0;
-			SaleList.push_back(NameTemp, TypeTemp, PriceTemp, DateTemp);
+			SaleList.push_back(Service(NameTemp, TypeTemp, PriceTemp, DateTemp));
 		}
 	}
 	fin.close();
@@ -62,7 +63,7 @@ void Services::ReadThroughFile(std::string fileName)
 Service Services::Minimums(std::string DataType)
 {
 	Service LowestNum;
-	const std::string temp = "";
+	const std::string temp;
 	for (auto x : SaleList)
 	{
 		if (x.getType() == DataType)
@@ -73,6 +74,7 @@ Service Services::Minimums(std::string DataType)
 			}
 		}
 	}
+	return LowestNum;
 }
 
 double Services::Ranges(std::string DataType)

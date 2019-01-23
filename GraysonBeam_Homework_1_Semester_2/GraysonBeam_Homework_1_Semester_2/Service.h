@@ -8,7 +8,7 @@ class Service
 public:
 	Service();
 	~Service();
-
+	Service(std::string FileNames, std::string FileTypes, double FilePrices, std::string FileDates);
 	// get client name
 	std::string getName() const;
 	// get client type
@@ -29,7 +29,7 @@ public:
 	// Overload the output operator
 	friend std::ostream & operator<< (std::ostream& out, const Service &x);
 
-	Service(std::string names = "null", std::string types = "null", double prices = 0.0, std::string dates = "null");
+	//Service(std::string names = "null", std::string types = "null", double prices = 0.0, std::string dates = "null");
 
 private:
 	// Represents names in the file

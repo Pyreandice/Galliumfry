@@ -3,6 +3,7 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
+#include <list>
 #include <strstream>
 #include <string>
 #include <sstream>
@@ -28,6 +29,6 @@ public:
 
 private:
 	std::set<std::string> SaleType;
-	std::vector<Service> SaleList;
+	std::list<Service> SaleList;
 }; 
 #endif // !SERVICES_H_
