@@ -88,5 +88,3 @@ std::string Service::GetDate() const
 Service::~Service()
 {
 }
-
-

@@ -85,6 +85,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -124,7 +127,11 @@
     <ClInclude Include="Services.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Averages.csv" />
     <None Include="data.csv" />
+    <None Include="Maximums.csv" />
+    <None Include="Minimums.csv" />
+    <None Include="Ranges.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

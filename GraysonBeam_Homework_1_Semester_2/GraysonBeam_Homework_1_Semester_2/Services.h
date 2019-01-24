@@ -1,5 +1,6 @@
 #ifndef SERVICES_H_
 #define SERVICES_H_
+#include <algorithm>
 #include <cmath>
 #include <fstream>
 #include <iostream>
@@ -18,14 +19,14 @@ public:
 	Services();
 	~Services();
 	void ReadThroughFile(std::string fileName);
+	int TotalCounter(std::string DataType);
 	Service Minimums(std::string DataType);
 	Service Maximums(std::string DataType);
 	double Ranges(std::string DataType);
 	double Averages(std::string DataType);
-	int TotalCounter(std::string DataType);
-	void TypeList();
+	void Testing();
 	std::set<std::string> TypeListGetter();
-	std::string CombineFile();
+	//bool compare_to(Service& first, Service& second);
 
 private:
 	std::set<std::string> SaleType;

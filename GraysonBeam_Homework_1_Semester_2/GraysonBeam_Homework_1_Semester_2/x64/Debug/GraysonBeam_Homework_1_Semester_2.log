@@ -1,3 +1,4 @@
-﻿  Services.cpp
-Services.obj : error LNK2019: unresolved external symbol "public: class Service __cdecl Services::Maximums(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Maximums@Services@@QEAA?AVService@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: double __cdecl Services::Ranges(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Ranges@Services@@QEAANV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-C:\Users\grays\Documents\GitHub\Galliumfry\GraysonBeam_Homework_1_Semester_2\x64\Debug\GraysonBeam_Homework_1_Semester_2.exe : fatal error LNK1120: 1 unresolved externals
+﻿  main.cpp
+  Services.cpp
+  Generating Code...
+  GraysonBeam_Homework_1_Semester_2.vcxproj -> C:\Users\Grayson\source\repos\Galliumfry\GraysonBeam_Homework_1_Semester_2\x64\Debug\GraysonBeam_Homework_1_Semester_2.exe
