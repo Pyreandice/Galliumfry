@@ -1,4 +1,5 @@
 #include "Services.h"
+#include <iomanip>
 
 Services::Services()
 {
@@ -38,19 +39,19 @@ void Services::ReadThroughFile(std::string fileName)
 				case 0: 
 				{
 					NameTemp = buff2;
-					//std::cout << NameTemp << std::endl;
+					//std::cout << NameTemp << ", ";
 					break;
 				}
 				case 1:
 				{
 					TypeTemp = buff2;
-					
+					//std::cout << TypeTemp<< ", ";
 					break;
 				}
 				case 2:
 				{
 					PriceTemp = std::stod(buff2);
-					//std::cout << PriceTemp << std::endl;
+					//std::cout << PriceTemp << ", ";
 					break;											// Working Correctly
 				}
 				case 3:
@@ -64,12 +65,14 @@ void Services::ReadThroughFile(std::string fileName)
 					// else, do_nothing();
 					break;
 				}
-				counter += 1;
 			}
-			counter = 0;
-			SaleList.emplace_back(Service(NameTemp, TypeTemp, PriceTemp, DateTemp));
-			//std::cout << NameTemp << TypeTemp << PriceTemp << DateTemp << std::endl;
+			counter += 1; //this line is never run
 		}
+		counter = 0;
+
+		SaleList.emplace_back(Service(NameTemp, TypeTemp, PriceTemp, DateTemp));
+		std::cout << NameTemp << ", " << TypeTemp << ", " << PriceTemp << ", " << DateTemp << std::endl;
+
 	}
 	fin.close();
 
@@ -127,7 +130,7 @@ Service Services::Maximums(std::string DataType)
 			// else, do_nothing();
 		} // else, do_nothing();
 	}
-	fout.open("Maximums.csv");
+	fout.open("Maximums.txt");
 	fout << HighestValue << std::endl;
 	fout.close();
 	return HighestValue;
@@ -155,7 +158,7 @@ Service Services::Minimums(std::string DataType)
 			}
 		} // else, do_nothing();
 	}
-	fout.open("Minimums.csv");
+	fout.open("Minimums.txt");
 	fout << LowestValue << std::endl;
 	fout.close();
 	return LowestValue;
@@ -169,7 +172,7 @@ double Services::Ranges(std::string DataType)
 	std::ofstream fout;
 	auto smallestNum = Minimums(DataType);
 	auto largestNum = Maximums(DataType);
-	fout.open("Ranges.csv");
+	fout.open("Ranges.txt");
 	fout << largestNum.getPrice() - smallestNum.getPrice() << std::endl;		// Broken
 	fout.close();
 	return (largestNum.getPrice() - smallestNum.getPrice());
@@ -191,17 +194,40 @@ double Services::Averages(std::string DataType)
 		} // else, do_nothing();
 	}
 	finalResult = result / TotalCounter(DataType);
-	fout.open("Averages.csv");
+	fout.open("Averages.txt");
 	fout << finalResult << std::endl;
 	fout.close();
 	return finalResult;
 }
 
-void Services::Testing()
+/***
+ * Prints the data to the corresponding text files.
+ * 
+ * Lewis helped write this method so they look pretty much identical.
+ */
+void Services::CreateFiles()
 {
-	for (auto p : SaleType)
+	for (auto type : SaleType)
 	{
-		std::cout << p << std::endl;
+		auto outFile = type + ".txt";
+		std::ofstream fout(outFile);
+
+		for (auto sale : SaleList)
+		{
+			if (sale.getType() == type)
+			{
+				fout << sale << std::endl;
+			}
+		}
+
+		fout << std::endl;
+		fout << std::fixed << std::setprecision(2) << std::endl;
+		fout << type << ": " << this->TotalCounter(type) << std::endl;
+		fout << "Average: " << this->Averages(type) << std::endl;
+		fout << "Minimum: " << this->Minimums(type) << std::endl;
+		fout << "Maximum: " << this->Ranges(type) << std::endl;
+
+		fout.close();
 	}
 }
 

@@ -37,17 +37,10 @@
     <None Include="data.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Maximums.csv">
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Minimums.txt">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Minimums.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Averages.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Ranges.csv">
-      <Filter>Resource Files</Filter>
-    </None>
+    </Text>
   </ItemGroup>
 </Project>

@@ -24,7 +24,7 @@ public:
 	Service Maximums(std::string DataType);
 	double Ranges(std::string DataType);
 	double Averages(std::string DataType);
-	void Testing();
+	void CreateFiles();
 	std::set<std::string> TypeListGetter();
 	//bool compare_to(Service& first, Service& second);
 

@@ -127,11 +127,10 @@
     <ClInclude Include="Services.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Averages.csv" />
     <None Include="data.csv" />
-    <None Include="Maximums.csv" />
-    <None Include="Minimums.csv" />
-    <None Include="Ranges.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Minimums.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
