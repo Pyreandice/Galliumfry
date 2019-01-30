@@ -42,5 +42,8 @@
     <Text Include="Minimums.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Purchasing.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

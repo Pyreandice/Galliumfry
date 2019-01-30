@@ -46,6 +46,7 @@ void Services::ReadThroughFile(std::string fileName)
 				{
 					TypeTemp = buff2;
 					//std::cout << TypeTemp<< ", ";
+					SaleType.insert(buff2);
 					break;
 				}
 				case 2:
